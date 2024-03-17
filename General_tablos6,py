@@ -1,0 +1,12 @@
+class familia:
+    def __init__(self, madre, padre):
+        self.madre = madre
+        self.padre = padre
+        self.hijos = []
+    def _str_(self):
+        return ("la madre es " + self.madre + " el padre es " + self.padre +" y sus hijos son " + ",".join(self.hijos))
+    
+familia = familia("maria","juan")
+familia.hijos.append("pedro")
+familia.hijos.append("jose")
+print(familia._str_())
