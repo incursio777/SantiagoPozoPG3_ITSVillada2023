@@ -1,4 +1,3 @@
-
 try:
     with open('esfuerzo_padre.txt', 'w') as archivo:
         archivo.write(123)
