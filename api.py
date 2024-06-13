@@ -32,7 +32,7 @@ def atributos_2():
             file.close()
 def ordenamiento():
     if __name__ == "__main__":
-        url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?attribute=dark&sort=level"
+        url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?attribute=dark&sor t=level"
         responce = requests.get(url)
         if responce.status_code == 200:
             contenido = (responce.content)

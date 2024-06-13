@@ -1,0 +1,65 @@
+<html>
+    <header>
+        <title>listado de provincias</title>
+        <meta charset="utf-8">
+        <h1>Listado de Provincias Argentinas</h1>
+        <a href="https://www.argentina.gob.ar/onti/software-publico/catalogo/apis" target="_blank">
+            <div class="caja"></div>
+        </a>
+        <style>
+            .caja{
+                width: 40px;
+                height: 40px;
+                background-color: yellow;
+                position: absolute;
+                top: 10px; 
+                right: 25px;
+                border-radius: 50%;
+                transition: transform 0.3s, background-color 0.3s;
+            }
+            .caja:hover{
+                transform: rotate(45deg) scale(1.5);
+                background-color: rgb(240, 243, 77);
+            }
+            header{
+                background-color: rgb(56, 174, 221);
+                width: 35%;
+                text-align: center;
+                border-radius: 0px 10px 10px 0px;
+                margin-right: auto;
+            }
+            body{
+                background: linear-gradient(to right, rgb(27, 160, 212), rgb(29, 0, 133));
+                
+            }
+            th, td {
+                border: 1px solid black;
+                display: flex; 
+                align-items: center;
+                background-color: rgb(29, 0, 133);
+                color: white;
+                text-align: left;
+                transition: background-color 0.7s;
+
+            }
+            td:hover{
+                background-color: rgb(27, 160, 212);
+            }
+            table{
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+                border-collapse: collapse;
+            }
+        </style>
+    </header>
+    <body>
+    <table >
+        <tr>
+            {%for provincias in provincias%}
+            <td>{{provincias.id}}. {{provincias.nombre}}</td>
+            {%endfor%}
+        </tr>
+    </table>
+    </body>
+    </html>
