@@ -3,30 +3,6 @@ from datetime import datetime
 from django.template import Template, Context
 import requests
 
-
-def fecha(request):
-    now = datetime.now()
-
-    todo = """<html>
-    <body>
-    <h1>
-    fecha y hora %s
-    </h1>
-    </body>
-    </html>""" % now
-    return HttpResponse(todo)
-
-def calculo_url(request, num1, num2):
-    n1=int(num1)
-    n2=int(num2)
-    suma=n1+n2
-    todo = """<html>
-    <body>
-    <h1>
-    %s + %s = %s
-    </h1>""" % (n1, n2, suma)
-    return HttpResponse(todo)
-
 def template(request):
     uri = "https://apis.datos.gob.ar/georef/api/provincias?campos=id, nombre&orden=id"
     response1 = requests.get(uri)

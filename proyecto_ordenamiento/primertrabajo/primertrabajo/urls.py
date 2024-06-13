@@ -21,7 +21,5 @@ from primertrabajo.viwes import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('fecha/', fecha),
-    path('calculo/<int:num1>/<int:num2>', calculo_url),
     path('template/', template),
 ]
