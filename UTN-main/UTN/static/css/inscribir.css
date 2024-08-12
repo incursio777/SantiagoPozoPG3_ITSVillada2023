@@ -1,0 +1,74 @@
+/* Estilos generales del body y encabezados */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h3 {
+    color: #333;
+}
+
+/* Estilos específicos para la sección de inscripción a materias */
+h1 {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Estilos para formularios y etiquetas */
+form {
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilos para botones de envío */
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para secciones específicas (sobre-nosotros, programas-academicos, contacto) */
+#sobre-nosotros {
+    background-color: #f5f5f5;
+}
+
+#programas-academicos {
+    background-color: #e0e0e0;
+}
+
+#contacto {
+    background-color: #d5d5d5;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+address {
+    font-style: normal;
+}

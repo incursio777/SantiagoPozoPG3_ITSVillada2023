@@ -1,0 +1,39 @@
+{% extends 'base2.html' %}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="../static/css/home2.css">
+    <header>
+        <h1>Bienvenido a la Universidad Tecnologica Nacional</h1>
+        <p>Preparando a futuros líderes y profesionales</p>
+    </header>
+
+    <h2>Bienvenido {{ request.user.username }}</h2>
+    <section id="sobre-nosotros">
+        <h2>Sobre Nosotros</h2>
+        <p>Bienvenido a la Universidad Tecnologica Nacional (UTN), donde nos esforzamos por ofrecer educación de calidad, fomentar la investigación y promover la excelencia académica.</p>
+    </section>
+
+    <section id="programas-academicos">
+        <h2>Programas Académicos</h2>
+        <p>Explora nuestros diversos programas académicos que abarcan desde la tecnología hasta la innovación.</p>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Tienes preguntas o necesitas más información? No dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte.</p>
+        <address>
+            Dirección: Maestro M. Lopez esq, Cruz Roja Argentina S/N, Córdoba
+            <br>
+            Teléfono: 0351 598-6000
+            <br>
+            Correo Electrónico: info@frc.utn.edu.ar
+        </address>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Universidad Tecnologica Nacional (UTN). Todos los derechos reservados.</p>
+    </footer>
+
+{% endblock %}

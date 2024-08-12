@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} home {% endblock %}
+
+<!-- <link rel="stylesheet" href="{% static 'css/index.css' %}"> -->
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="../static/css/index.css">
+    <header>
+        <div class="container">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/67/UTN_logo.jpg">
+            <h1>Universidad Tecnologica Nacional</h1>
+        </div>
+        
+    </header>
+    <div class="container main">
+        <h2>Bienvenido a la Universidad Tecnologica Nacional</h2>
+        <p>Explora nuestras opciones académicas y descubre un mundo de oportunidades educativas.</p>
+    </div>
+    <footer>
+        <p>&copy; 2023 Universidad Tecnologica Nacional. Todos los derechos reservados.</p>
+    </footer>
+
+{% endblock%}

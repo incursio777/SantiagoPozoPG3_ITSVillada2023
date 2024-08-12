@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+address {
+    font-style: normal;
+}
+
+/* Estilos para las secciones específicas */
+
+#sobre-nosotros {
+    background-color: #f5f5f5;
+}
+
+#programas-academicos {
+    background-color: #e0e0e0;
+}
+
+#contacto {
+    background-color: #d5d5d5;
+}
+
+/* Estilos para el contenido general */
+
+h1,
+p {
+    margin-bottom: 15px;
+}
+
+/* Estilos para la dirección en la sección de contacto */
+
+address {
+    margin-top: 10px;
+}
+
+/* Estilos para el pie de página */
+
+footer p {
+    margin: 0;
+}

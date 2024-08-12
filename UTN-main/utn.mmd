@@ -1,0 +1,198 @@
+classDiagram
+
+    note for EstadoCurso "los metodos set y get se definen
+    en la clase EstadoCurso y son 
+    extensivos por todas las demas 
+    clases del modelo"
+
+    class Usuario{
+    -String nombre_completo
+    -String domicilio
+    -mail mail
+    -String telefono
+    -Tipodocumento Tipodocumento
+    -String documento
+    -Date fecha_nacimiento
+
+    +crear()
+    +inscribirse()
+    +generarReporte()
+    }
+
+    class Tipodocumento{
+    -String nombre
+    -String descripcion<link rel="stylesheet" href="{% static 'css/index.css' %}">
+    }
+
+    class Inscripcion{
+    -Curso curso
+    -Carrera carrera
+    -CondicionFinalCursada condicionFinal
+    -NotaEvaluacion listaNotas
+    -EstadoCurso estado
+    -DateTime fechaInicio
+    -DateTime fechaFinal
+
+    +crear()
+    +asignarFechaInicio()
+    +asignarFechaFin()
+    +conocerCursos()
+    +conocerCarrera()
+    +conocerMateria()
+    +conocerCondicionFinal()
+    +cambiarEstado()
+    +cambiarCondicionFinal()
+    +listarNotas()
+    +generarCodigo()
+    }
+
+    class Materia{
+    -String nombre
+    -String siglas
+    -Carrera carrera
+    -Curso listaCursos
+    -Materia materia_correlativa
+
+    +crear()
+    +conocerCorrelatividad()
+    +conocerPlanAcademico()
+
+    }
+
+    class Correlatividad{entity
+    -Materia materia
+    -EstadoCurso estado_curso
+    
+    +conocerEstadocurso()
+    +conocerPlanAcademico()
+    }
+
+    class Turno{
+    -String nombre
+    -String descripcion
+    }
+
+    class Curso{
+    -String nombreCursoentity
+    -Turno turno
+    -i
+    Inscripcion --> "1..*" NotaEvaluacion
+    Inscripcion --> "1" EstadoCurso
+    Inscripcion --> "1..*" Curso
+    Inscripcion --> "1..*" Historial
+
+    Curso --> "1" Turno
+
+    Correlatividad --> "1" Materia
+    Correlatividad --> "1" PlanAcademico
+    Materia --> "1" PlanAcademico
+
+    NotaEvaluacion --> "1" Profesor
+
+    Historial --> "1" EstadoCurso
+
+    Correlatividad --> "1" EstadoCurso
+   
+    Profesor --> "1..*" Curso nt nivel
+    -String listaHorarios
+    
+    +crear()
+    }
+
+    class PlanAcademico{
+    -String nombre
+    -String descripcion
+    }
+
+    class EstadoCurso{
+    -String nombre
+    -String descripcion
+
+    +setNombre()
+    +getNombre()
+    +setDescripcion()
+    +getDescripcion()
+    +cargarCondicionFinal()
+    }
+
+    class Historial{
+    -String nombre
+    -String descripcion
+    -Inscripcion Inscripcion
+    -Date fecha_inicio
+    -Date fecha_final
+    -EstadoCurso estado_curso
+    }
+
+    class NotaEvaluacion{entity
+    -String nombre
+    -String tipoEvaluacion
+    -int valor
+    -Date fecha
+    -Profesor profesor
+
+    +crear()
+    }
+
+    class Profesor{
+    -String nombre
+    -String apellido
+    -mail email
+    -Curso curso
+
+    +crear()
+    }
+
+    Inscripcion --> "1..*" NotaEvaluacion
+    Inscripcion --> "1" EstadoCurso
+    Inscripcion --> "1..*" Curso
+    Inscripcion --> "1..*" Historial
+
+    Curso --> "1" Turno
+
+    Correlatividad --> "1" Materia
+    Correlatividad --> "1" PlanAcademico
+    Materia --> "1" PlanAcademico
+
+    NotaEvaluacion --> "1" Profesor
+
+    Historial --> "1" EstadoCurso
+
+    Correlatividad --> "1" EstadoCurso
+   
+    Profesor --> "1..*" Curso 
+    class Carrera{
+    -String nombre
+    -String descripcion
+    -Materia listaMaterias
+    }
+
+    Usuario --> "1" Tipodocumento
+
+    Usuario --> "1..*" Inscripcion
+    Usuario --> "1..*" Carrera
+
+    Carrera --> "1..*" Materia
+
+    Materia --> "1..*" Curso
+    Materia --> "1" Correlatividad
+    Materia --> "1..*" Profesor
+    
+    Inscripcion --> "1..*" NotaEvaluacion
+    Inscripcion --> "1" EstadoCurso
+    Inscripcion --> "1" Curso
+    Inscripcion --> "1..*" Historial
+
+    Curso --> "1" Turno
+
+    Correlatividad --> "1" Materia
+    Correlatividad --> "1" PlanAcademico
+    Materia --> "1" PlanAcademico
+
+    NotaEvaluacion --> "1" Profesor
+
+    Historial --> "1" EstadoCurso
+
+    Correlatividad --> "1" EstadoCurso
+   
+    Profesor --> "1..*" Curso 

@@ -1,0 +1,15 @@
+{% extends 'base2.html' %}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="../static/css/histrial.css">
+    <h1>Historial de materias</h1>
+    {% for i in inscripciones %}
+        <h3>Materia: {{i.curso.materia}}</h3><br>
+        <p>Turno: {{i.curso.turno}}</p><br>
+        <p>Nivel: {{i.curso.nivel}}</p><br>
+        <p>Fecha de Inscripción: {{i.fechaInicio}}</p><br>
+    {% endfor %}
+
+{% endblock %}

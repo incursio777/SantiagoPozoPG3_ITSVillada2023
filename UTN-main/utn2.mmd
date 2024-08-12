@@ -1,0 +1,122 @@
+erDiagram
+    
+    Usuario {
+        String nombre_completo PK
+        String domicilio
+        String mail
+        String telefono
+        String tipodocumento FK
+        String documento
+        date fecha_nacimiento
+    }
+
+    tipodocumento {
+        String nombre PK
+        String descripcion
+    }
+
+    Alumno {
+        String nombre_completo PK
+        String listaCarrera FK
+        String listaInscripciones FK
+    }
+
+    Inscripcion {
+        datetime fechaInicio PK
+        datetime fechaFinal PK
+        String curso FK
+        String carrera FK
+        String condicionFinal FK
+        String estado FK
+    }
+
+    Materia {
+        String nombre PK
+        String siglas
+        String carrera FK
+        String listaCursos FK
+        String materia_correlativa FK
+    }
+
+    Correlatividad {
+        String nombre PK
+        String materia FK
+        String estado_curso FK
+
+    Turno {
+        String nombre PK
+        String descripcion
+    }
+
+    Curso {
+        String nombreCurso PK
+        String turno FK
+    }
+
+    NotaEvaluacion {
+        String nombre PK
+        String tipoEvaluacion
+        Int valor
+        date fecha
+        String profesor FK
+    }
+
+    Profesor {
+        String listaHorarios PK
+    }
+
+    PlanAcademico {
+        String nombre PK
+        String descripcion
+    }
+
+    EstadoCurso {
+        String nombre PK
+        String descripcion
+    }
+
+    Historial {
+        String nombre PK
+        String descripcion
+        date fecha_inicio
+        date fecha_final
+        String estado_curso FK
+    }
+
+    Usuario --|> tipodocumento : usa
+    Alumno --|> Carrera : sigue
+    Alumno --|> Inscripcion : inscribe
+    Inscripcion --|> Curso : inscrito_en
+    Inscripcion --|> Carrera : pertenece_a
+    Inscripcion --|> CondicionFinalCursada : tiene_condicion
+    Inscripcion --|> NotaEvaluacion : registra_notas
+    Inscripcion --|> EstadoCurso : tiene_estado
+    Materia --|> Carrera : pertenece_a
+    Materia --|> Curso : ofrece
+    Materia --|> Correlatividad : tiene_correlativas
+    Materia --|> PlanAcademico : parte_de_plan
+    Correlatividad --|> Materia : correlativa_de
+    Correlatividad --|> EstadoCurso : tiene_estado
+    Curso --|> Turno : se_realiza_en
+    Curso --|> NotaEvaluacion : registra_notas
+    Curso --|> Profesor : es_dictado_por
+    Historial --|> EstadoCurso : tiene_estado
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    Tomy, tengo que decirte que me comi a tu wacha pero no queria decirtelo en persona xq t ibas a enojar asi que me gustaria decirtelo x aca. Muchas gracias por entender, loviu.
+

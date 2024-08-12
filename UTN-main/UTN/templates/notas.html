@@ -1,0 +1,17 @@
+{% extends 'base2.html' %}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+
+    <link rel="stylesheet" type="text/css" href="../static/css/nota.css">
+    <h1>Notas</h1>
+    
+    {% for n in notas %}
+        <h3>{{n.Inscripcion.curso.materia}}</h3>
+        <p>{{ n }}</p>
+        <p>Nota: {{ n.valor }}</p>
+        <p>Profesor: {{ n.profesor }}</p>
+    {% endfor %}
+
+{% endblock %}  

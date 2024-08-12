@@ -1,0 +1,98 @@
+<!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1>Horario de Clases</h1>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Día de la semana</th>
+        <th>Hora de inicio</th>
+        <th>Hora de fin</th>
+        <th>Asignatura</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for horario in horarios %}
+      <tr>
+        <td>{{ horario.dia_semana }}</td>
+        <td>{{ horario.hora_inicio }}</td>
+        <td>{{ horario.hora_fin }}</td>
+        <td>{{ horario.asignatura }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Agregar Horario</button>
+  </form>
+
+
+
+-->
+<div class="table-responsive">
+  <table class="table">
+    <caption>Horas Catedra</caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Mañana</th>
+      <th scope="col">Tarde</th>
+      <th scope="col">Noche</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Hora 0</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">Hora 1</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">Hoara 2</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th scope="row">Recreo</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">Hora 3</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">Hora 4</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+  </tbody>
+  </table>
+</div>

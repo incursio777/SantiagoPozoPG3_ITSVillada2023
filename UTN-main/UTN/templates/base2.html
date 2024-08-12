@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} navbar {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/home.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="/home">Inicio</a>
+            </li>
+            <li>
+                <a href="/inscribir">Incribir a materia</a>
+            </li>
+            <li>
+                <a href="/notas">Notas</a>
+            </li>
+            <li>
+                <a href="/historial">Historial</a>
+            </li>
+            <li>
+                <a href="/horario">Horario</a>
+            </li>
+        </ul>
+    </nav>
+    
+    
+    {% block content %}
+    {% endblock %}
+    
+</body>
+</html>
