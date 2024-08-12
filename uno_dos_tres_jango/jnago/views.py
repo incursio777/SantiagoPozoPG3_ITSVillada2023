@@ -15,7 +15,7 @@ def template(request):
 
 
 
-    t1 = open("C:/Users/Santiago/Downloads/SantiagoPozoPG3_ITSVillada2023/proyecto_ordenamiento/primertrabajo/plantillas/template1.html")
+    t1 = open("C:/Users/Santiago/Downloads/SantiagoPozoPG3_ITSVillada2023/uno_dos_tres_jango/plantillas/template1.html")
     plantilla = Template(t1.read())
     t1.close()
     ctx = Context({"provincias": provincias})
